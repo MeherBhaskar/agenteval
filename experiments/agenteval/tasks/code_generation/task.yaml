@@ -1,0 +1,43 @@
+category: code_generation
+description: 'Generate working code that uses a specified API/library to accomplish
+  a task. Evaluated on: correctness (tests pass), API usage, code quality.'
+environment:
+  cpu: '4'
+  image: agenteval/code-gen:v1.0
+  memory: 8g
+  network: true
+  timeout: 300
+interface:
+  action_space:
+    fields:
+      code: string
+      explanation: string
+    type: dict
+  observation_space:
+    fields:
+      api_docs: string
+      constraints: list[string]
+      example_usage: string
+      task_description: string
+    type: dict
+metadata:
+  difficulty: medium
+  domain: software_engineering
+  tags:
+  - api_usage
+  - code_generation
+  - testing
+metrics:
+- test_pass_rate
+- api_correctness
+- code_quality_score
+- token_usage
+- latency_ms
+splits:
+  challenge: 200
+  dev: 200
+  test: 1000
+  train: 500
+task_id: code_gen_01_api_usage
+version: '1.0'
+

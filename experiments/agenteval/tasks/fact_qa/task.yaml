@@ -1,0 +1,42 @@
+category: fact_qa
+description: Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.
+environment:
+  cpu: '2'
+  image: agenteval/fact-qa:v1.0
+  memory: 4g
+  network: true
+  timeout: 120
+interface:
+  action_space:
+    fields:
+      action_type: string
+      content: string
+    type: dict
+  observation_space:
+    fields:
+      context: string
+      question: string
+      step: integer
+    type: dict
+metadata:
+  difficulty: hard
+  domain: general_knowledge
+  requires_multi_hop: true
+  tags:
+  - multi_hop
+  - retrieval
+  - reasoning
+metrics:
+- exact_match
+- f1
+- retrieval_recall@10
+- latency_ms
+- api_cost_usd
+splits:
+  challenge: 100
+  dev: 500
+  test: 2000
+  train: 1000
+task_id: fact_qa_01_multi_hop
+version: '1.0'
+

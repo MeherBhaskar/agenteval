@@ -1,0 +1,39 @@
+{
+  "task_id": "api_integration_01",
+  "category": "api_integration",
+  "version": "1.0",
+  "description": "Task for api_integration category.",
+  "environment": {
+    "image": "agenteval/api_integration:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 120,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "input": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "output": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 100,
+    "dev": 50,
+    "test": 200,
+    "challenge": 50
+  },
+  "metrics": ["accuracy", "f1", "latency_ms"],
+  "metadata": {
+    "domain": "nlp",
+    "difficulty": "medium",
+    "tags": ["api_integration"]
+  }
+}

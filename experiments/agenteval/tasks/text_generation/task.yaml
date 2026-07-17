@@ -1,0 +1,34 @@
+category: text_generation
+description: Task for text_generation category.
+environment:
+  cpu: '2'
+  image: agenteval/text_generation:v1.0
+  memory: 4g
+  network: true
+  timeout: 120
+interface:
+  action_space:
+    fields:
+      output: string
+    type: dict
+  observation_space:
+    fields:
+      input: string
+    type: dict
+metadata:
+  difficulty: medium
+  domain: nlp
+  tags:
+  - text_generation
+metrics:
+- accuracy
+- f1
+- latency_ms
+splits:
+  challenge: 50
+  dev: 50
+  test: 200
+  train: 100
+task_id: text_generation_01
+version: '1.0'
+

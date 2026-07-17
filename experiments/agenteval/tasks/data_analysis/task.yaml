@@ -1,0 +1,42 @@
+category: data_analysis
+description: Perform data analysis using pandas on a provided dataset. Tasks include
+  filtering, aggregation, visualization data preparation.
+environment:
+  cpu: '4'
+  image: agenteval/data-analysis:v1.0
+  memory: 8g
+  network: true
+  timeout: 300
+interface:
+  action_space:
+    fields:
+      code: string
+      explanation: string
+    type: dict
+  observation_space:
+    fields:
+      dataframe_schema: string
+      sample_data: string
+      target_metric: string
+      task_description: string
+    type: dict
+metadata:
+  difficulty: medium
+  domain: data_science
+  tags:
+  - pandas
+  - data_analysis
+  - python
+metrics:
+- output_match
+- code_quality_score
+- execution_time
+- memory_usage
+splits:
+  challenge: 200
+  dev: 200
+  test: 1000
+  train: 500
+task_id: data_analysis_01_pandas
+version: '1.0'
+

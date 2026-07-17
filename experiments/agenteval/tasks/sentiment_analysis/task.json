@@ -1,0 +1,39 @@
+{
+  "task_id": "sentiment_analysis_01",
+  "category": "sentiment_analysis",
+  "version": "1.0",
+  "description": "Task for sentiment_analysis category.",
+  "environment": {
+    "image": "agenteval/sentiment_analysis:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 120,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "input": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "output": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 100,
+    "dev": 50,
+    "test": 200,
+    "challenge": 50
+  },
+  "metrics": ["accuracy", "f1", "latency_ms"],
+  "metadata": {
+    "domain": "nlp",
+    "difficulty": "medium",
+    "tags": ["sentiment_analysis"]
+  }
+}

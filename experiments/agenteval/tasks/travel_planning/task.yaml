@@ -1,0 +1,43 @@
+category: travel_planning
+description: 'Plan a trip satisfying multiple constraints: budget, dates, preferences,
+  group size. Requires flight/hotel search, itinerary optimization, trade-off reasoning.'
+environment:
+  cpu: '4'
+  image: agenteval/travel-planning:v1.0
+  memory: 8g
+  network: true
+  timeout: 600
+interface:
+  action_space:
+    fields:
+      action: string
+      parameters: dict
+    type: dict
+  observation_space:
+    fields:
+      constraints: dict
+      current_itinerary: dict
+      search_results: list[dict]
+      user_request: string
+    type: dict
+metadata:
+  difficulty: hard
+  domain: travel
+  tags:
+  - multi_constraint
+  - optimization
+  - planning
+metrics:
+- constraint_satisfaction
+- total_cost_vs_budget
+- preference_alignment
+- itinerary_quality
+- planning_time
+splits:
+  challenge: 200
+  dev: 200
+  test: 1000
+  train: 500
+task_id: travel_planning_01_multi_constraint
+version: '1.0'
+

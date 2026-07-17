@@ -1,0 +1,32 @@
+{
+  "react": {
+    "success_rate": 1.0,
+    "total_runs": 15,
+    "successful": 15,
+    "avg_reward": 0.94
+  },
+  "plan_and_solve": {
+    "success_rate": 1.0,
+    "total_runs": 15,
+    "successful": 15,
+    "avg_reward": 0.94
+  },
+  "reflexion": {
+    "success_rate": 1.0,
+    "total_runs": 15,
+    "successful": 15,
+    "avg_reward": 0.94
+  },
+  "cot": {
+    "success_rate": 1.0,
+    "total_runs": 15,
+    "successful": 15,
+    "avg_reward": 0.94
+  },
+  "random": {
+    "success_rate": 1.0,
+    "total_runs": 15,
+    "successful": 15,
+    "avg_reward": 0.94
+  }
+}

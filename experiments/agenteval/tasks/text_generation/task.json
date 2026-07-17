@@ -1,0 +1,39 @@
+{
+  "task_id": "text_generation_01",
+  "category": "text_generation",
+  "version": "1.0",
+  "description": "Task for text_generation category.",
+  "environment": {
+    "image": "agenteval/text_generation:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 120,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "input": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "output": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 100,
+    "dev": 50,
+    "test": 200,
+    "challenge": 50
+  },
+  "metrics": ["accuracy", "f1", "latency_ms"],
+  "metadata": {
+    "domain": "nlp",
+    "difficulty": "medium",
+    "tags": ["text_generation"]
+  }
+}

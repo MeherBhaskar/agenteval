@@ -1,0 +1,34 @@
+category: entity_extraction
+description: Task for entity_extraction category.
+environment:
+  cpu: '2'
+  image: agenteval/entity_extraction:v1.0
+  memory: 4g
+  network: true
+  timeout: 120
+interface:
+  action_space:
+    fields:
+      output: string
+    type: dict
+  observation_space:
+    fields:
+      input: string
+    type: dict
+metadata:
+  difficulty: medium
+  domain: nlp
+  tags:
+  - entity_extraction
+metrics:
+- accuracy
+- f1
+- latency_ms
+splits:
+  challenge: 50
+  dev: 50
+  test: 200
+  train: 100
+task_id: entity_extraction_01
+version: '1.0'
+

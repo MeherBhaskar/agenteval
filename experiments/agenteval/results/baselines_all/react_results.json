@@ -1,0 +1,1736 @@
+{
+  "fact_qa_01_multi_hop_seed42": [
+    {
+      "task_id": "fact_qa_01_multi_hop",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.3,
+      "metrics": {
+        "total_reward": 1.3
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.\nExample: \"What is the capital of the country where the inventor of the telephone was born?\"\n",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "context": "Retrieved documents about query...",
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 6.67572021484375e-05,
+      "tokens_used": 150,
+      "cost_usd": 0.0015,
+      "error": null
+    }
+  ],
+  "text_generation_01_seed42": [
+    {
+      "task_id": "text_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for text_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 0.00010704994201660156,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "debugging_01_seed42": [
+    {
+      "task_id": "debugging_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for debugging category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 8.392333984375e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sql_generation_01_seed42": [
+    {
+      "task_id": "sql_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sql_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.267692565917969e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "entity_extraction_01_seed42": [
+    {
+      "task_id": "entity_extraction_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for entity_extraction category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.1961669921875e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "retail_01_substitution_seed42": [
+    {
+      "task_id": "retail_01_substitution",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.8,
+      "metrics": {
+        "total_reward": 0.8
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Real-time product substitution for out-of-stock items in grocery pickup orders. Agent receives: OOS item, customer profile, store inventory, similarity graph. Must propose substitute maximizing acceptance probability and margin.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8835067749023438e-05,
+      "tokens_used": 200,
+      "cost_usd": 0.002,
+      "error": null
+    }
+  ],
+  "code_gen_01_api_usage_seed42": [
+    {
+      "task_id": "code_gen_01_api_usage",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "metrics": {
+        "total_reward": 1.0
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Generate working code that uses a specified API/library to accomplish a task. Evaluated on: correctness (tests pass), API usage, code quality.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8835067749023438e-05,
+      "tokens_used": 500,
+      "cost_usd": 0.005,
+      "error": null
+    }
+  ],
+  "web_shopping_01_product_finding_seed42": [
+    {
+      "task_id": "web_shopping_01_product_finding",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.7,
+      "metrics": {
+        "total_reward": 0.7
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Find and purchase a product on a simulated e-commerce site given a natural language query. Requires search, filtering, comparison, and checkout navigation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 2.384185791015625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "travel_planning_01_multi_constraint_seed42": [
+    {
+      "task_id": "travel_planning_01_multi_constraint",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.9,
+      "metrics": {
+        "total_reward": 0.9
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Plan a trip satisfying multiple constraints: budget, dates, preferences, group size. Requires flight/hotel search, itinerary optimization, trade-off reasoning.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 2.2172927856445312e-05,
+      "tokens_used": 400,
+      "cost_usd": 0.004,
+      "error": null
+    }
+  ],
+  "data_analysis_01_pandas_seed42": [
+    {
+      "task_id": "data_analysis_01_pandas",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Perform data analysis using pandas on a provided dataset. Tasks include filtering, aggregation, visualization data preparation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.4345855712890625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sentiment_analysis_01_seed42": [
+    {
+      "task_id": "sentiment_analysis_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sentiment_analysis category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.029273986816406e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "summarization_01_seed42": [
+    {
+      "task_id": "summarization_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for summarization category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.076957702636719e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "api_integration_01_seed42": [
+    {
+      "task_id": "api_integration_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for api_integration category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.00543212890625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "question_answering_01_seed42": [
+    {
+      "task_id": "question_answering_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for question_answering category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.886222839355469e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "code_review_01_seed42": [
+    {
+      "task_id": "code_review_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for code_review category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.8623809814453125e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "translation_01_seed42": [
+    {
+      "task_id": "translation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for translation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 6.771087646484375e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "fact_qa_01_multi_hop_seed123": [
+    {
+      "task_id": "fact_qa_01_multi_hop",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.3,
+      "metrics": {
+        "total_reward": 1.3
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.\nExample: \"What is the capital of the country where the inventor of the telephone was born?\"\n",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "context": "Retrieved documents about query...",
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.3855438232421875e-05,
+      "tokens_used": 150,
+      "cost_usd": 0.0015,
+      "error": null
+    }
+  ],
+  "text_generation_01_seed123": [
+    {
+      "task_id": "text_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for text_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.9577484130859375e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "debugging_01_seed123": [
+    {
+      "task_id": "debugging_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for debugging category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sql_generation_01_seed123": [
+    {
+      "task_id": "sql_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sql_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "entity_extraction_01_seed123": [
+    {
+      "task_id": "entity_extraction_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for entity_extraction category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.790855407714844e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "retail_01_substitution_seed123": [
+    {
+      "task_id": "retail_01_substitution",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.8,
+      "metrics": {
+        "total_reward": 0.8
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Real-time product substitution for out-of-stock items in grocery pickup orders. Agent receives: OOS item, customer profile, store inventory, similarity graph. Must propose substitute maximizing acceptance probability and margin.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8596649169921875e-05,
+      "tokens_used": 200,
+      "cost_usd": 0.002,
+      "error": null
+    }
+  ],
+  "code_gen_01_api_usage_seed123": [
+    {
+      "task_id": "code_gen_01_api_usage",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "metrics": {
+        "total_reward": 1.0
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Generate working code that uses a specified API/library to accomplish a task. Evaluated on: correctness (tests pass), API usage, code quality.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8596649169921875e-05,
+      "tokens_used": 500,
+      "cost_usd": 0.005,
+      "error": null
+    }
+  ],
+  "web_shopping_01_product_finding_seed123": [
+    {
+      "task_id": "web_shopping_01_product_finding",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.7,
+      "metrics": {
+        "total_reward": 0.7
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Find and purchase a product on a simulated e-commerce site given a natural language query. Requires search, filtering, comparison, and checkout navigation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.9550323486328125e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "travel_planning_01_multi_constraint_seed123": [
+    {
+      "task_id": "travel_planning_01_multi_constraint",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.9,
+      "metrics": {
+        "total_reward": 0.9
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Plan a trip satisfying multiple constraints: budget, dates, preferences, group size. Requires flight/hotel search, itinerary optimization, trade-off reasoning.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.9073486328125e-05,
+      "tokens_used": 400,
+      "cost_usd": 0.004,
+      "error": null
+    }
+  ],
+  "data_analysis_01_pandas_seed123": [
+    {
+      "task_id": "data_analysis_01_pandas",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Perform data analysis using pandas on a provided dataset. Tasks include filtering, aggregation, visualization data preparation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.2438507080078125e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sentiment_analysis_01_seed123": [
+    {
+      "task_id": "sentiment_analysis_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sentiment_analysis category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.8623809814453125e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "summarization_01_seed123": [
+    {
+      "task_id": "summarization_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for summarization category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "api_integration_01_seed123": [
+    {
+      "task_id": "api_integration_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for api_integration category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.743171691894531e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "question_answering_01_seed123": [
+    {
+      "task_id": "question_answering_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for question_answering category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.814697265625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "code_review_01_seed123": [
+    {
+      "task_id": "code_review_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for code_review category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "translation_01_seed123": [
+    {
+      "task_id": "translation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for translation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.172325134277344e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "fact_qa_01_multi_hop_seed456": [
+    {
+      "task_id": "fact_qa_01_multi_hop",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.3,
+      "metrics": {
+        "total_reward": 1.3
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.\nExample: \"What is the capital of the country where the inventor of the telephone was born?\"\n",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "context": "Retrieved documents about query...",
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.147125244140625e-05,
+      "tokens_used": 150,
+      "cost_usd": 0.0015,
+      "error": null
+    }
+  ],
+  "text_generation_01_seed456": [
+    {
+      "task_id": "text_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for text_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.506111145019531e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "debugging_01_seed456": [
+    {
+      "task_id": "debugging_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for debugging category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.814697265625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sql_generation_01_seed456": [
+    {
+      "task_id": "sql_generation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sql_generation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.814697265625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "entity_extraction_01_seed456": [
+    {
+      "task_id": "entity_extraction_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for entity_extraction category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "retail_01_substitution_seed456": [
+    {
+      "task_id": "retail_01_substitution",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.8,
+      "metrics": {
+        "total_reward": 0.8
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Real-time product substitution for out-of-stock items in grocery pickup orders. Agent receives: OOS item, customer profile, store inventory, similarity graph. Must propose substitute maximizing acceptance probability and margin.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8835067749023438e-05,
+      "tokens_used": 200,
+      "cost_usd": 0.002,
+      "error": null
+    }
+  ],
+  "code_gen_01_api_usage_seed456": [
+    {
+      "task_id": "code_gen_01_api_usage",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "metrics": {
+        "total_reward": 1.0
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Generate working code that uses a specified API/library to accomplish a task. Evaluated on: correctness (tests pass), API usage, code quality.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 2.0742416381835938e-05,
+      "tokens_used": 500,
+      "cost_usd": 0.005,
+      "error": null
+    }
+  ],
+  "web_shopping_01_product_finding_seed456": [
+    {
+      "task_id": "web_shopping_01_product_finding",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.7,
+      "metrics": {
+        "total_reward": 0.7
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Find and purchase a product on a simulated e-commerce site given a natural language query. Requires search, filtering, comparison, and checkout navigation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8596649169921875e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "travel_planning_01_multi_constraint_seed456": [
+    {
+      "task_id": "travel_planning_01_multi_constraint",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 0.9,
+      "metrics": {
+        "total_reward": 0.9
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Plan a trip satisfying multiple constraints: budget, dates, preferences, group size. Requires flight/hotel search, itinerary optimization, trade-off reasoning.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        }
+      ],
+      "wall_time": 1.8835067749023438e-05,
+      "tokens_used": 400,
+      "cost_usd": 0.004,
+      "error": null
+    }
+  ],
+  "data_analysis_01_pandas_seed456": [
+    {
+      "task_id": "data_analysis_01_pandas",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Perform data analysis using pandas on a provided dataset. Tasks include filtering, aggregation, visualization data preparation.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 4.0531158447265625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "sentiment_analysis_01_seed456": [
+    {
+      "task_id": "sentiment_analysis_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for sentiment_analysis category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.838539123535156e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "summarization_01_seed456": [
+    {
+      "task_id": "summarization_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for summarization category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 0.00016689300537109375,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "api_integration_01_seed456": [
+    {
+      "task_id": "api_integration_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for api_integration category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.933906555175781e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "question_answering_01_seed456": [
+    {
+      "task_id": "question_answering_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for question_answering category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.8623809814453125e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "code_review_01_seed456": [
+    {
+      "task_id": "code_review_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for code_review category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.910064697265625e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ],
+  "translation_01_seed456": [
+    {
+      "task_id": "translation_01",
+      "agent_name": "ReAct-gpt-4o-mini",
+      "episode_id": 0,
+      "success": true,
+      "reward": 1.5,
+      "metrics": {
+        "total_reward": 1.5
+      },
+      "trajectory": [
+        {
+          "step": 0,
+          "observation": {
+            "task": "Task for translation category.",
+            "step": 0
+          },
+          "action": "search[relevant information for the task]"
+        },
+        {
+          "step": 1,
+          "observation": {
+            "step": 1
+          },
+          "action": "search[more specific details]"
+        },
+        {
+          "step": 2,
+          "observation": {
+            "step": 2
+          },
+          "action": "search[more specific details]"
+        }
+      ],
+      "wall_time": 3.886222839355469e-05,
+      "tokens_used": 300,
+      "cost_usd": 0.003,
+      "error": null
+    }
+  ]
+}

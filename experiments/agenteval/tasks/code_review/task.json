@@ -1,0 +1,39 @@
+{
+  "task_id": "code_review_01",
+  "category": "code_review",
+  "version": "1.0",
+  "description": "Task for code_review category.",
+  "environment": {
+    "image": "agenteval/code_review:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 120,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "input": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "output": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 100,
+    "dev": 50,
+    "test": 200,
+    "challenge": 50
+  },
+  "metrics": ["accuracy", "f1", "latency_ms"],
+  "metadata": {
+    "domain": "nlp",
+    "difficulty": "medium",
+    "tags": ["code_review"]
+  }
+}
