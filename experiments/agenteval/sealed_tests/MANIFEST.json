@@ -1,0 +1,230 @@
+{
+  "created": "2026-07-17T17:21:56.934714Z",
+  "version": "1.0",
+  "tasks": {
+    "fact_qa_01_multi_hop": {
+      "test": {
+        "file": "fact_qa_01_multi_hop_test.jsonl",
+        "sha256": "876bfc0fed5e7b847a4d98a2437b2821c361f281da05d0206a39d5803d620d14",
+        "n_samples": 2000,
+        "seed": 456
+      },
+      "challenge": {
+        "file": "fact_qa_01_multi_hop_challenge.jsonl",
+        "sha256": "04119e0baf443cafe7821e3320e25dab5f31809d45ae8dcb001dff8a5e25b88d",
+        "n_samples": 100,
+        "seed": 789
+      }
+    },
+    "text_generation_01": {
+      "challenge": {
+        "file": "text_generation_01_challenge.jsonl",
+        "sha256": "0aee10649d4e52d648a0a5d0ac365aaa5dc0aaa1891b45b03f7eab5215c7db28",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "text_generation_01_test.jsonl",
+        "sha256": "9c9389707545104e922cb04c4b7a8137f34ba7c759cbbb4e639e82e7ddd88f2b",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "debugging_01": {
+      "challenge": {
+        "file": "debugging_01_challenge.jsonl",
+        "sha256": "1052895a92f3261c51684c02c58f836927305bc2790cb2531a1375866f03d826",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "debugging_01_test.jsonl",
+        "sha256": "a0d944aaaef3c34cda8761059e9ea400fe67060de92cece557f7e170088801e9",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "sql_generation_01": {
+      "challenge": {
+        "file": "sql_generation_01_challenge.jsonl",
+        "sha256": "fc042f7cef9de2710459fe272d606e1db2661e9c9fe8469117b67a83501d551f",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "sql_generation_01_test.jsonl",
+        "sha256": "677458b2dadc236c0b2854976014430b75754f638c88942a86eedabaaa33b6c2",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "entity_extraction_01": {
+      "challenge": {
+        "file": "entity_extraction_01_challenge.jsonl",
+        "sha256": "cdf38f77fc7a61b30f77b4147d1ac1d40d44a596e5263353223e66c48cabb47a",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "entity_extraction_01_test.jsonl",
+        "sha256": "f7ef4f075f4f69b5ac534fda7ca21715d09222b503dbd6c36c3c8ebd89e3b085",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "retail_01_substitution": {
+      "challenge": {
+        "file": "retail_01_substitution_challenge.jsonl",
+        "sha256": "058686b5ae476e944dd1ad2c457957b97c835baded7ffb8932635911157c8e20",
+        "n_samples": 500,
+        "seed": 789
+      },
+      "test": {
+        "file": "retail_01_substitution_test.jsonl",
+        "sha256": "40716b2c8a5c0eb65e9a07d88deb96425a1130c73fd6918eeb62ab7dbdb9b0f2",
+        "n_samples": 5000,
+        "seed": 456
+      }
+    },
+    "code_gen_01_api_usage": {
+      "challenge": {
+        "file": "code_gen_01_api_usage_challenge.jsonl",
+        "sha256": "16e4f0bcc7e02795c6b88d18cbce4f9577b320ee42c3897d3f24b4b8dcfe81f1",
+        "n_samples": 200,
+        "seed": 789
+      },
+      "test": {
+        "file": "code_gen_01_api_usage_test.jsonl",
+        "sha256": "055438dec91ad71b13c5d1455fb2d2a22bd0715eacfa541982fc236a164b6cf4",
+        "n_samples": 1000,
+        "seed": 456
+      }
+    },
+    "web_shopping_01_product_finding": {
+      "challenge": {
+        "file": "web_shopping_01_product_finding_challenge.jsonl",
+        "sha256": "815d638c88d4df732110ac4154d0354b8271cc45db8cc77a031f01d9d18ef791",
+        "n_samples": 500,
+        "seed": 789
+      },
+      "test": {
+        "file": "web_shopping_01_product_finding_test.jsonl",
+        "sha256": "fcabbc821511d743da51852eae54ccb09133fea33065935d323b22a8587fd053",
+        "n_samples": 3000,
+        "seed": 456
+      }
+    },
+    "travel_planning_01_multi_constraint": {
+      "challenge": {
+        "file": "travel_planning_01_multi_constraint_challenge.jsonl",
+        "sha256": "c1747c4049f8febdf2114c128d8dd08add21caeb0cd05a40b955bf05a0e242ea",
+        "n_samples": 200,
+        "seed": 789
+      },
+      "test": {
+        "file": "travel_planning_01_multi_constraint_test.jsonl",
+        "sha256": "e1b5e8f4ec625c29fa1584560053ac5cdb0858415d0e11cb939b6b8b9940cea2",
+        "n_samples": 1000,
+        "seed": 456
+      }
+    },
+    "data_analysis_01_pandas": {
+      "challenge": {
+        "file": "data_analysis_01_pandas_challenge.jsonl",
+        "sha256": "3864f2a322e753a7a49fa946b8155a5672a36d7419fb5083152adcaac5e016c0",
+        "n_samples": 200,
+        "seed": 789
+      },
+      "test": {
+        "file": "data_analysis_01_pandas_test.jsonl",
+        "sha256": "d36b9b3e9b659da71b0c3c4fe75ce45a680eed69e25a28c24d96cfa321b6ef39",
+        "n_samples": 1000,
+        "seed": 456
+      }
+    },
+    "sentiment_analysis_01": {
+      "challenge": {
+        "file": "sentiment_analysis_01_challenge.jsonl",
+        "sha256": "477234d87a929fc953fd5d6371a313f9f45a278b5b72a9dd2a7ae84ffec2a559",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "sentiment_analysis_01_test.jsonl",
+        "sha256": "bec853d942fa1ec222e6a83367450afec57d88e069213bfab1410f87b6fc4b34",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "summarization_01": {
+      "challenge": {
+        "file": "summarization_01_challenge.jsonl",
+        "sha256": "f601945c0c4da8eb244cd0b74d2d0a938db5045a54113e42e14180f0a92cc7aa",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "summarization_01_test.jsonl",
+        "sha256": "087dc8e09764ec2916f51d0652629084c5bef3ff07bf07ad7a99faff55291241",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "api_integration_01": {
+      "challenge": {
+        "file": "api_integration_01_challenge.jsonl",
+        "sha256": "637adfa81295cdcd7e78f4c41c330f68688a113e3fe9a6175df8a76c6c038e4d",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "api_integration_01_test.jsonl",
+        "sha256": "6f6205bc4c11f889bf7685c4c16fea076fdd1f0c569dd5f48d76594420520692",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "question_answering_01": {
+      "challenge": {
+        "file": "question_answering_01_challenge.jsonl",
+        "sha256": "e5ece4a98015c1726fab3d7e5a9feadc6d467391f3a5377d302c83b778bb5835",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "question_answering_01_test.jsonl",
+        "sha256": "10be54cd3b6560a060db9afb23b8f5470066ff22bfb1bd8c3d4f4d52cfd28350",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "code_review_01": {
+      "challenge": {
+        "file": "code_review_01_challenge.jsonl",
+        "sha256": "56fcf7fa564a75e818d42dcd3830e9441c0adcbaa1fff2f64e9eee6716598c7f",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "code_review_01_test.jsonl",
+        "sha256": "b98fbfe3b44ce0de3dbe225418ec74fe0f853d043d43c16b9f7756455181941e",
+        "n_samples": 200,
+        "seed": 456
+      }
+    },
+    "translation_01": {
+      "challenge": {
+        "file": "translation_01_challenge.jsonl",
+        "sha256": "98c5a74c26712d2f6db2a1a21d2b93c1496e9a88051dd8918880118720afaf10",
+        "n_samples": 50,
+        "seed": 789
+      },
+      "test": {
+        "file": "translation_01_test.jsonl",
+        "sha256": "14867b4fa9f152d779198a6aec08322db6a7e62f05356a917d70d93ef5ee57ad",
+        "n_samples": 200,
+        "seed": 456
+      }
+    }
+  }
+}
