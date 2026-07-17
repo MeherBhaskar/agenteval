@@ -1,0 +1,28 @@
+[
+  {
+    "retriever":"bm25",
+    "dataset":"msmarco",
+    "init_time_s":0.6642508507,
+    "cost_per_1k_usd":0.02,
+    "latency_ms":25.9523525238,
+    "ndcg@10":0.0,
+    "recall@10":0.0,
+    "mrr@10":0.0,
+    "ndcg@100":0.0,
+    "recall@100":0.0,
+    "mrr@100":0.0
+  },
+  {
+    "retriever":"bge-base",
+    "dataset":"msmarco",
+    "init_time_s":1502.7697930336,
+    "cost_per_1k_usd":0.0082950754,
+    "latency_ms":11.9449086189,
+    "ndcg@10":0.0,
+    "recall@10":0.0,
+    "mrr@10":0.0,
+    "ndcg@100":0.0,
+    "recall@100":0.0,
+    "mrr@100":0.0
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "retriever":"bm25",
+    "dataset":"nfcorpus",
+    "init_time_s":0.2803139687,
+    "cost_per_1k_usd":0.02,
+    "latency_ms":2.0713162422,
+    "ndcg@10":0.2871331474,
+    "recall@10":0.1214987348,
+    "mrr@10":0.4793948413,
+    "ndcg@100":0.2267259433,
+    "recall@100":0.1828863181,
+    "mrr@100":0.4830820885,
+    "error":null
+  },
+  {
+    "retriever":"bge-base",
+    "dataset":"nfcorpus",
+    "init_time_s":null,
+    "cost_per_1k_usd":null,
+    "latency_ms":null,
+    "ndcg@10":null,
+    "recall@10":null,
+    "mrr@10":null,
+    "ndcg@100":null,
+    "recall@100":null,
+    "mrr@100":null,
+    "error":"The NVIDIA driver on your system is too old (found version 12020). Please update your GPU driver by downloading and installing a new version from the URL: http:\/\/www.nvidia.com\/Download\/index.aspx Alternatively, go to: https:\/\/pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver."
+  }
+]

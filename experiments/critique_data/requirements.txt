@@ -1,0 +1,6 @@
+# Critique Data Generation Dependencies
+requests>=2.31.0
+tqdm>=4.65.0
+numpy>=1.24.0
+
+# Run with: python generate_critiques.py --test-only --output critique_test.jsonl
