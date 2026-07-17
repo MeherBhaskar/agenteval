@@ -1,0 +1,49 @@
+{
+  "task_id": "fact_qa_01_multi_hop",
+  "category": "fact_qa",
+  "version": "1.0",
+  "description": "Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.",
+  "environment": {
+    "image": "agenteval/fact-qa:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 120,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "question": "string",
+        "step": "integer",
+        "context": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "action_type": "string",
+        "content": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 1000,
+    "dev": 500,
+    "test": 2000,
+    "challenge": 100
+  },
+  "metrics": [
+    "exact_match",
+    "f1",
+    "retrieval_recall@10",
+    "latency_ms",
+    "api_cost_usd"
+  ],
+  "metadata": {
+    "domain": "general_knowledge",
+    "difficulty": "hard",
+    "requires_multi_hop": true,
+    "tags": ["multi_hop", "retrieval", "reasoning"]
+  }
+}

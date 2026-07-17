@@ -1,0 +1,49 @@
+{
+  "task_id": "travel_planning_01_multi_constraint",
+  "category": "travel_planning",
+  "version": "1.0",
+  "description": "Plan a trip satisfying multiple constraints: budget, dates, preferences, group size. Requires flight/hotel search, itinerary optimization, trade-off reasoning.",
+  "environment": {
+    "image": "agenteval/travel-planning:v1.0",
+    "cpu": "4",
+    "memory": "8g",
+    "timeout": 600,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "user_request": "string",
+        "constraints": "dict",
+        "search_results": "list[dict]",
+        "current_itinerary": "dict"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "action": "string",
+        "parameters": "dict"
+      }
+    }
+  },
+  "splits": {
+    "train": 500,
+    "dev": 200,
+    "test": 1000,
+    "challenge": 200
+  },
+  "metrics": [
+    "constraint_satisfaction",
+    "total_cost_vs_budget",
+    "preference_alignment",
+    "itinerary_quality",
+    "planning_time"
+  ],
+  "metadata": {
+    "domain": "travel",
+    "difficulty": "hard",
+    "tags": ["multi_constraint", "optimization", "planning"]
+  }
+}

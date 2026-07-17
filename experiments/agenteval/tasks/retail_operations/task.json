@@ -1,0 +1,53 @@
+{
+  "task_id": "retail_01_substitution",
+  "category": "retail_operations",
+  "version": "1.0",
+  "description": "Real-time product substitution for out-of-stock items in grocery pickup orders. Agent receives: OOS item, customer profile, store inventory, similarity graph. Must propose substitute maximizing acceptance probability and margin.",
+  "environment": {
+    "image": "agenteval/retail-sim:v1.0",
+    "cpu": "4",
+    "memory": "8g",
+    "timeout": 180,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "oos_sku": "string",
+        "customer_id": "string",
+        "basket": "list[string]",
+        "store_inventory": "dict[sku, qty]",
+        "similarity_graph": "dict[sku, list[tuple[sku, score]]]",
+        "customer_preferences": "dict"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "action": "string",
+        "substitute_sku": "string",
+        "confidence": "float"
+      }
+    }
+  },
+  "splits": {
+    "train": 5000,
+    "dev": 1000,
+    "test": 5000,
+    "challenge": 500
+  },
+  "metrics": [
+    "acceptance_rate",
+    "margin_retention_pct",
+    "customer_satisfaction",
+    "decision_latency_ms",
+    "safety_violations"
+  ],
+  "metadata": {
+    "domain": "retail_grocery",
+    "difficulty": "medium",
+    "real_time": true,
+    "tags": ["substitution", "personalization", "inventory"]
+  }
+}

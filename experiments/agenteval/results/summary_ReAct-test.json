@@ -1,0 +1,39 @@
+{
+  "agent": "ReAct-test",
+  "n_episodes": 30,
+  "overall_success_rate": 0.9,
+  "overall_avg_reward": 0.9433333333333334,
+  "total_cost_usd": 0.0725,
+  "by_task": {
+    "fact_qa_01_multi_hop": {
+      "success_rate": 0.7857142857142857,
+      "avg_reward": 1.05,
+      "avg_time": 4.635538373674665e-05,
+      "total_cost": 0.0165
+    },
+    "retail_01_substitution": {
+      "success_rate": 1.0,
+      "avg_reward": 0.8,
+      "avg_time": 1.8596649169921875e-05,
+      "total_cost": 0.008
+    },
+    "code_gen_01_api_usage": {
+      "success_rate": 1.0,
+      "avg_reward": 1.0,
+      "avg_time": 2.3126602172851562e-05,
+      "total_cost": 0.02
+    },
+    "web_shopping_01_product_finding": {
+      "success_rate": 1.0,
+      "avg_reward": 0.7,
+      "avg_time": 1.7344951629638672e-05,
+      "total_cost": 0.012
+    },
+    "travel_planning_01_multi_constraint": {
+      "success_rate": 1.0,
+      "avg_reward": 0.9,
+      "avg_time": 1.6570091247558594e-05,
+      "total_cost": 0.016
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": "code_gen_01_api_usage",
+  "category": "code_generation",
+  "version": "1.0",
+  "description": "Generate working code that uses a specified API/library to accomplish a task. Evaluated on: correctness (tests pass), API usage, code quality.",
+  "environment": {
+    "image": "agenteval/code-gen:v1.0",
+    "cpu": "4",
+    "memory": "8g",
+    "timeout": 300,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "task_description": "string",
+        "api_docs": "string",
+        "example_usage": "string",
+        "constraints": "list[string]"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "code": "string",
+        "explanation": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 500,
+    "dev": 200,
+    "test": 1000,
+    "challenge": 200
+  },
+  "metrics": [
+    "test_pass_rate",
+    "api_correctness",
+    "code_quality_score",
+    "token_usage",
+    "latency_ms"
+  ],
+  "metadata": {
+    "domain": "software_engineering",
+    "difficulty": "medium",
+    "tags": ["api_usage", "code_generation", "testing"]
+  }
+}

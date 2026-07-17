@@ -1,0 +1,239 @@
+task_id: fact_qa_01_multi_hop
+category: fact_qa
+version: "1.0"
+description: |
+  Multi-hop fact-seeking QA requiring retrieval and reasoning over 2+ documents.
+  Example: "What is the capital of the country where the inventor of the telephone was born?"
+
+environment:
+  image: "agenteval/fact-qa:v1.0"
+  cpu: "2"
+  memory: "4g"
+  timeout: 120
+  network: true
+
+interface:
+  observation_space:
+    type: "dict"
+    fields:
+      question: "string"
+      step: "integer"
+      context: "string"  # retrieved docs
+  action_space:
+    type: "dict"
+    fields:
+      action_type: "string"  # "search", "answer", "reason"
+      content: "string"
+
+splits:
+  train: 1000
+  dev: 500
+  test: 2000
+  challenge: 100
+
+metrics:
+  - "exact_match"
+  - "f1"
+  - "retrieval_recall@10"
+  - "latency_ms"
+  - "api_cost_usd"
+
+metadata:
+  domain: "general_knowledge"
+  difficulty: "hard"
+  requires_multi_hop: true
+  tags: ["multi_hop", "retrieval", "reasoning"]
+
+---
+task_id: retail_01_substitution
+category: retail_operations
+version: "1.0"
+description: |
+  Real-time product substitution for out-of-stock items in grocery pickup orders.
+  Agent receives: OOS item, customer profile, store inventory, similarity graph.
+  Must propose substitute maximizing acceptance probability and margin.
+
+environment:
+  image: "agenteval/retail-sim:v1.0"
+  cpu: "4"
+  memory: "8g"
+  timeout: 180
+  network: true
+
+interface:
+  observation_space:
+    type: "dict"
+    fields:
+      oos_sku: "string"
+      customer_id: "string"
+      basket: "list[string]"
+      store_inventory: "dict[sku, qty]"
+      similarity_graph: "dict[sku, list[tuple[sku, score]]]"
+      customer_preferences: "dict"
+  action_space:
+    type: "dict"
+    fields:
+      action: "string"  # "suggest", "auto_sub", "contact"
+      substitute_sku: "string"
+      confidence: "float"
+
+splits:
+  train: 5000
+  dev: 1000
+  test: 5000
+  challenge: 500
+
+metrics:
+  - "acceptance_rate"
+  - "margin_retention_pct"
+  - "customer_satisfaction"
+  - "decision_latency_ms"
+  - "safety_violations"
+
+metadata:
+  domain: "retail_grocery"
+  difficulty: "medium"
+  real_time: true
+  tags: ["substitution", "personalization", "inventory"]
+
+---
+task_id: code_gen_01_api_usage
+category: code_generation
+version: "1.0"
+description: |
+  Generate working code that uses a specified API/library to accomplish a task.
+  Evaluated on: correctness (tests pass), API usage, code quality.
+
+environment:
+  image: "agenteval/code-gen:v1.0"
+  cpu: "4"
+  memory: "8g"
+  timeout: 300
+  network: true
+
+interface:
+  observation_space:
+    type: "dict"
+    fields:
+      task_description: "string"
+      api_docs: "string"
+      example_usage: "string"
+      constraints: "list[string]"
+  action_space:
+    type: "dict"
+    fields:
+      code: "string"
+      explanation: "string"
+
+splits:
+  train: 500
+  dev: 200
+  test: 1000
+  challenge: 200
+
+metrics:
+  - "test_pass_rate"
+  - "api_correctness"
+  - "code_quality_score"
+  - "token_usage"
+  - "latency_ms"
+
+metadata:
+  domain: "software_engineering"
+  difficulty: "medium"
+  tags: ["api_usage", "code_generation", "testing"]
+
+---
+task_id: web_shopping_01_product_finding
+category: web_shopping
+version: "1.0"
+description: |
+  Find and purchase a product on a simulated e-commerce site given a natural language query.
+  Requires search, filtering, comparison, and checkout navigation.
+
+environment:
+  image: "agenteval/web-shopping:v1.0"
+  cpu: "2"
+  memory: "4g"
+  timeout: 300
+  network: true
+
+interface:
+  observation_space:
+    type: "dict"
+    fields:
+      query: "string"
+      page_html: "string"
+      url: "string"
+      cart: "list[dict]"
+  action_space:
+    type: "dict"
+    fields:
+      action_type: "string"  # "click", "type", "scroll", "search", "buy"
+      selector: "string"
+      value: "string"
+
+splits:
+  train: 2000
+  dev: 500
+  test: 3000
+  challenge: 500
+
+metrics:
+  - "purchase_success"
+  - "query_relevance"
+  - "price_optimality"
+  - "steps_to_purchase"
+  - "total_cost_usd"
+
+metadata:
+  domain: "e_commerce"
+  difficulty: "hard"
+  tags: ["web_navigation", "shopping", "multi_step"]
+
+---
+task_id: travel_planning_01_multi_constraint
+category: travel_planning
+version: "1.0"
+description: |
+  Plan a trip satisfying multiple constraints: budget, dates, preferences, group size.
+  Requires flight/hotel search, itinerary optimization, trade-off reasoning.
+
+environment:
+  image: "agenteval/travel-planning:v1.0"
+  cpu: "4"
+  memory: "8g"
+  timeout: 600
+  network: true
+
+interface:
+  observation_space:
+    type: "dict"
+    fields:
+      user_request: "string"
+      constraints: "dict"
+      search_results: "list[dict]"
+      current_itinerary: "dict"
+  action_space:
+    type: "dict"
+    fields:
+      action: "string"  # "search_flights", "search_hotels", "add_activity", "finalize"
+      parameters: "dict"
+
+splits:
+  train: 500
+  dev: 200
+  test: 1000
+  challenge: 200
+
+metrics:
+  - "constraint_satisfaction"
+  - "total_cost_vs_budget"
+  - "preference_alignment"
+  - "itinerary_quality"
+  - "planning_time"
+
+metadata:
+  domain: "travel"
+  difficulty: "hard"
+  tags: ["multi_constraint", "optimization", "planning"]

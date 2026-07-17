@@ -1,0 +1,48 @@
+{
+  "task_id": "data_analysis_01_pandas",
+  "category": "data_analysis",
+  "version": "1.0",
+  "description": "Perform data analysis using pandas on a provided dataset. Tasks include filtering, aggregation, visualization data preparation.",
+  "environment": {
+    "image": "agenteval/data-analysis:v1.0",
+    "cpu": "4",
+    "memory": "8g",
+    "timeout": 300,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "task_description": "string",
+        "dataframe_schema": "string",
+        "sample_data": "string",
+        "target_metric": "string"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "code": "string",
+        "explanation": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 500,
+    "dev": 200,
+    "test": 1000,
+    "challenge": 200
+  },
+  "metrics": [
+    "output_match",
+    "code_quality_score",
+    "execution_time",
+    "memory_usage"
+  ],
+  "metadata": {
+    "domain": "data_science",
+    "difficulty": "medium",
+    "tags": ["pandas", "data_analysis", "python"]
+  }
+}

@@ -1,0 +1,15 @@
+FROM agenteval/base:latest
+
+# Retail simulation environment
+RUN pip install --no-cache-dir \
+    gymnasium \
+    numpy \
+    pandas \
+    matplotlib \
+    tqdm
+
+COPY experiments/retail_gym /app/retail_gym
+RUN pip install -e /app/retail_gym
+
+WORKDIR /app
+CMD ["python", "-m", "agenteval.runner", "--task", "retail_01_substitution", "--agent", "react", "--split", "dev"]

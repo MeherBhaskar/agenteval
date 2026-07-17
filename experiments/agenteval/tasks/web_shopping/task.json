@@ -1,0 +1,50 @@
+{
+  "task_id": "web_shopping_01_product_finding",
+  "category": "web_shopping",
+  "version": "1.0",
+  "description": "Find and purchase a product on a simulated e-commerce site given a natural language query. Requires search, filtering, comparison, and checkout navigation.",
+  "environment": {
+    "image": "agenteval/web-shopping:v1.0",
+    "cpu": "2",
+    "memory": "4g",
+    "timeout": 300,
+    "network": true
+  },
+  "interface": {
+    "observation_space": {
+      "type": "dict",
+      "fields": {
+        "query": "string",
+        "page_html": "string",
+        "url": "string",
+        "cart": "list[dict]"
+      }
+    },
+    "action_space": {
+      "type": "dict",
+      "fields": {
+        "action_type": "string",
+        "selector": "string",
+        "value": "string"
+      }
+    }
+  },
+  "splits": {
+    "train": 2000,
+    "dev": 500,
+    "test": 3000,
+    "challenge": 500
+  },
+  "metrics": [
+    "purchase_success",
+    "query_relevance",
+    "price_optimality",
+    "steps_to_purchase",
+    "total_cost_usd"
+  ],
+  "metadata": {
+    "domain": "e_commerce",
+    "difficulty": "hard",
+    "tags": ["web_navigation", "shopping", "multi_step"]
+  }
+}
