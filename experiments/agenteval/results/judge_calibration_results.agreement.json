@@ -1,0 +1,10 @@
+{
+  "constraint_satisfaction": [],
+  "retrieval_recall@10": [],
+  "acceptance_rate": [],
+  "test_pass_rate": [],
+  "purchase_success": [],
+  "margin_retention_pct": [],
+  "f1": [],
+  "exact_match": []
+}
