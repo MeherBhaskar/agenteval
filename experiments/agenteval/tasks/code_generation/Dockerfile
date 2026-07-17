@@ -1,17 +1,12 @@
 FROM agenteval/base:latest
 
 RUN pip install --no-cache-dir \
-    pytest \
-    black \
-    isort \
-    flake8 \
-    mypy \
-    requests \
-    httpx
+    flask \
+    pytest
 
-COPY tasks/code_generation /app/tasks/code_generation
-RUN pip install -e /app/tasks/code_generation
+COPY tasks/code_generation/server.py /app/tasks/code_generation/
+COPY tasks/code_generation/task.json /app/tasks/code_generation/
 
 WORKDIR /app/tasks/code_generation
 
-CMD ["python", "run_server.py"]
+CMD ["python", "server.py"]

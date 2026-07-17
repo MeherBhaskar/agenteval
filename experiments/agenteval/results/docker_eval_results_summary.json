@@ -1,0 +1,227 @@
+{
+  "fact_qa_01_multi_hop/ReAct/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.6000000000000001,
+      0.6000000000000001,
+      0.6000000000000001
+    ]
+  },
+  "fact_qa_01_multi_hop/PlanAndSolve/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fact_qa_01_multi_hop/Reflexion/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "fact_qa_01_multi_hop/CoT/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fact_qa_01_multi_hop/Random/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.4,
+      0.2
+    ]
+  },
+  "retail_01_substitution/ReAct/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "retail_01_substitution/PlanAndSolve/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "retail_01_substitution/Reflexion/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "retail_01_substitution/CoT/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "retail_01_substitution/Random/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "code_gen_01_api_usage/ReAct/dev": {
+    "success": 3,
+    "total": 3,
+    "rewards": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "code_gen_01_api_usage/PlanAndSolve/dev": {
+    "success": 3,
+    "total": 3,
+    "rewards": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "code_gen_01_api_usage/Reflexion/dev": {
+    "success": 3,
+    "total": 3,
+    "rewards": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "code_gen_01_api_usage/CoT/dev": {
+    "success": 3,
+    "total": 3,
+    "rewards": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "code_gen_01_api_usage/Random/dev": {
+    "success": 3,
+    "total": 3,
+    "rewards": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "web_shopping_01_product_finding/ReAct/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004
+    ]
+  },
+  "web_shopping_01_product_finding/PlanAndSolve/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "web_shopping_01_product_finding/Reflexion/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999
+    ]
+  },
+  "web_shopping_01_product_finding/CoT/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "web_shopping_01_product_finding/Random/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.2,
+      0.2,
+      0.1
+    ]
+  },
+  "travel_planning_01_multi_constraint/ReAct/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "travel_planning_01_multi_constraint/PlanAndSolve/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "travel_planning_01_multi_constraint/Reflexion/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "travel_planning_01_multi_constraint/CoT/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "travel_planning_01_multi_constraint/Random/dev": {
+    "success": 0,
+    "total": 3,
+    "rewards": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

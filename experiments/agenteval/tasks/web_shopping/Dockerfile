@@ -1,13 +1,13 @@
 FROM agenteval/base:latest
 
 RUN pip install --no-cache-dir \
-    playwright \
+    flask \
     beautifulsoup4 \
     lxml
 
-COPY tasks/web_shopping /app/tasks/web_shopping
-RUN pip install -e /app/tasks/web_shopping
+COPY tasks/web_shopping/server.py /app/tasks/web_shopping/
+COPY tasks/web_shopping/task.json /app/tasks/web_shopping/
 
 WORKDIR /app/tasks/web_shopping
 
-CMD ["python", "run_server.py"]
+CMD ["python", "server.py"]
