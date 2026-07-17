@@ -1,5 +1,5 @@
 {
-  "fact_qa_01_multi_hop/ReAct/dev": {
+  "fact_qa_01_multi_hop/ReAct/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -8,7 +8,7 @@
       0.6000000000000001
     ]
   },
-  "fact_qa_01_multi_hop/PlanAndSolve/dev": {
+  "fact_qa_01_multi_hop/PlanAndSolve/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -17,7 +17,7 @@
       0.0
     ]
   },
-  "fact_qa_01_multi_hop/Reflexion/dev": {
+  "fact_qa_01_multi_hop/Reflexion/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -26,7 +26,7 @@
       1.0
     ]
   },
-  "fact_qa_01_multi_hop/CoT/dev": {
+  "fact_qa_01_multi_hop/CoT/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -35,16 +35,16 @@
       0.0
     ]
   },
-  "fact_qa_01_multi_hop/Random/dev": {
+  "fact_qa_01_multi_hop/Random/test": {
     "success": 0,
     "total": 3,
     "rewards": [
-      0.0,
-      0.4,
+      0.2,
+      0.2,
       0.2
     ]
   },
-  "retail_01_substitution/ReAct/dev": {
+  "retail_01_substitution/ReAct/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -53,7 +53,7 @@
       0.0
     ]
   },
-  "retail_01_substitution/PlanAndSolve/dev": {
+  "retail_01_substitution/PlanAndSolve/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -62,7 +62,7 @@
       0.0
     ]
   },
-  "retail_01_substitution/Reflexion/dev": {
+  "retail_01_substitution/Reflexion/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -71,7 +71,7 @@
       0.0
     ]
   },
-  "retail_01_substitution/CoT/dev": {
+  "retail_01_substitution/CoT/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -80,7 +80,7 @@
       0.0
     ]
   },
-  "retail_01_substitution/Random/dev": {
+  "retail_01_substitution/Random/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -89,7 +89,7 @@
       0.0
     ]
   },
-  "code_gen_01_api_usage/ReAct/dev": {
+  "code_gen_01_api_usage/ReAct/test": {
     "success": 3,
     "total": 3,
     "rewards": [
@@ -98,7 +98,7 @@
       0.8
     ]
   },
-  "code_gen_01_api_usage/PlanAndSolve/dev": {
+  "code_gen_01_api_usage/PlanAndSolve/test": {
     "success": 3,
     "total": 3,
     "rewards": [
@@ -107,7 +107,7 @@
       0.8
     ]
   },
-  "code_gen_01_api_usage/Reflexion/dev": {
+  "code_gen_01_api_usage/Reflexion/test": {
     "success": 3,
     "total": 3,
     "rewards": [
@@ -116,7 +116,7 @@
       0.8
     ]
   },
-  "code_gen_01_api_usage/CoT/dev": {
+  "code_gen_01_api_usage/CoT/test": {
     "success": 3,
     "total": 3,
     "rewards": [
@@ -125,7 +125,7 @@
       0.8
     ]
   },
-  "code_gen_01_api_usage/Random/dev": {
+  "code_gen_01_api_usage/Random/test": {
     "success": 3,
     "total": 3,
     "rewards": [
@@ -134,7 +134,7 @@
       0.8
     ]
   },
-  "web_shopping_01_product_finding/ReAct/dev": {
+  "web_shopping_01_product_finding/ReAct/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -143,7 +143,7 @@
       0.30000000000000004
     ]
   },
-  "web_shopping_01_product_finding/PlanAndSolve/dev": {
+  "web_shopping_01_product_finding/PlanAndSolve/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -152,7 +152,7 @@
       0.0
     ]
   },
-  "web_shopping_01_product_finding/Reflexion/dev": {
+  "web_shopping_01_product_finding/Reflexion/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -161,7 +161,7 @@
       0.9999999999999999
     ]
   },
-  "web_shopping_01_product_finding/CoT/dev": {
+  "web_shopping_01_product_finding/CoT/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -170,16 +170,16 @@
       0.0
     ]
   },
-  "web_shopping_01_product_finding/Random/dev": {
+  "web_shopping_01_product_finding/Random/test": {
     "success": 0,
     "total": 3,
     "rewards": [
       0.2,
-      0.2,
+      0.0,
       0.1
     ]
   },
-  "travel_planning_01_multi_constraint/ReAct/dev": {
+  "travel_planning_01_multi_constraint/ReAct/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -188,7 +188,7 @@
       0.0
     ]
   },
-  "travel_planning_01_multi_constraint/PlanAndSolve/dev": {
+  "travel_planning_01_multi_constraint/PlanAndSolve/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -197,7 +197,7 @@
       0.0
     ]
   },
-  "travel_planning_01_multi_constraint/Reflexion/dev": {
+  "travel_planning_01_multi_constraint/Reflexion/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -206,7 +206,7 @@
       0.0
     ]
   },
-  "travel_planning_01_multi_constraint/CoT/dev": {
+  "travel_planning_01_multi_constraint/CoT/test": {
     "success": 0,
     "total": 3,
     "rewards": [
@@ -215,7 +215,7 @@
       0.0
     ]
   },
-  "travel_planning_01_multi_constraint/Random/dev": {
+  "travel_planning_01_multi_constraint/Random/test": {
     "success": 0,
     "total": 3,
     "rewards": [
