@@ -83,7 +83,7 @@ def call_judge(prompt: str) -> Dict:
     payload = {
         "model": "openai/nvidia/nemotron-3-ultra-550b-a55b",
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 512,
+        "max_tokens": 1024,
         "temperature": 0.0,
         "top_p": 1.0,
         "response_format": {"type": "json_object"}
@@ -145,7 +145,7 @@ Return ONLY this JSON structure (use 0.0 for irrelevant metrics):
     payload = {
         "model": "openai/nvidia/nemotron-3-ultra-550b-a55b",
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 512,
+        "max_tokens": 1024,
         "temperature": 0.0,
         "top_p": 1.0,
         "response_format": {"type": "json_object"}
@@ -162,75 +162,16 @@ Return ONLY this JSON structure (use 0.0 for irrelevant metrics):
     response.raise_for_status()
     content = response.json()["choices"][0]["message"]["content"]
 
-    # Strict JSON parsing
-    start = content.find("{")
-    end = content.rfind("}") + 1
-    if start >= 0 and end > start:
-        return json.loads(content[start:end])
-    raise ValueError(f"Failed to parse JSON from: {content[:200]}")
-
-
-def judge_sample(sample: Dict) -> Dict:
-    """Score one sample with Nemotron Ultra."""
-    prompt = f"""You are an automated scoring system. Output ONLY valid JSON. No explanations, no markdown, no text outside the JSON object.
-
-TASK: {sample["task_id"]}
-SAMPLE: {sample["sample_id"]}
-
-TRAJECTORY:
-{json.dumps(sample["trajectory"], indent=2)}
-
-GROUND TRUTH:
-{json.dumps(sample["ground_truth"], indent=2)}
-
-Return ONLY this JSON structure (use 0.0 for irrelevant metrics):
-{{
-  "scores": {{
-    "exact_match": 0.0,
-    "f1": 0.0,
-    "retrieval_recall@10": 0.0,
-    "acceptance_rate": 0.0,
-    "margin_retention_pct": 0.0,
-    "test_pass_rate": 0.0,
-    "api_correctness": 0.0,
-    "purchase_success": 0.0,
-    "price_optimality": 0.0,
-    "query_relevance": 0.0,
-    "constraint_satisfaction": 0.0,
-    "total_cost_vs_budget": 0.0,
-    "preference_alignment": 0.0,
-    "itinerary_quality": 0.0
-  }},
-  "reasoning": "max 10 words"
-}}"""
-
-    payload = {
-        "model": "openai/nvidia/nemotron-3-ultra-550b-a55b",
-        "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 512,
-        "temperature": 0.0,
-        "top_p": 1.0
-    }
-
-    headers = {"Content-Type": "application/json"}
-
-    response = requests.post(
-        "http://localhost:4000/v1/chat/completions",
-        headers=headers,
-        json=payload,
-        timeout=60
-    )
-    response.raise_for_status()
-
-    content = response.json()["choices"][0]["message"]["content"]
-
-    # Parse JSON strictly
-    start = content.find("{")
-    end = content.rfind("}") + 1
-    if start >= 0 and end > start:
-        return json.loads(content[start:end])
-
-    raise ValueError(f"Failed to parse JSON from: {content[:200]}")
+    # Nemotron with response_format returns clean JSON, parse directly
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        # Fallback: find outermost {}
+        start = content.find("{")
+        end = content.rfind("}") + 1
+        if start >= 0 and end > start:
+            return json.loads(content[start:end])
+        raise ValueError(f"Failed to parse JSON from: {content[:200]}")
 
 
 def main():
@@ -257,15 +198,22 @@ def main():
             print(f"  Sample {sample['sample_id']} ({i+1}/{len(samples)})")
             result = judge_sample(sample)
             print(f"  Scores: {result}")
+            results.append({
+                "sample_id": sample["sample_id"],
+                "task_id": sample["task_id"],
+                "judge": "nemotron-3-ultra",
+                "scores": result.get("scores", {}),
+                "reasoning": result.get("reasoning", "")
+            })
         except Exception as e:
             print(f"  Error: {e}")
-            yield {
+            results.append({
                 "sample_id": sample["sample_id"],
                 "task_id": sample["task_id"],
                 "judge": "nemotron-3-ultra",
                 "scores": {},
                 "reasoning": f"ERROR: {e}"
-            }
+            })
 
         # Save incrementally
         with open(args.output, "w") as f:

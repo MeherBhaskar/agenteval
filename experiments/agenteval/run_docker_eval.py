@@ -282,40 +282,47 @@ class RetailAgent(BaseAgent):
         oos_sku = observation.get("oos_sku", "")
         similarity_graph = observation.get("similarity_graph", {})
         store_inventory = observation.get("store_inventory", {})
+        customer_prefs = observation.get("customer_preferences", {})
 
         candidates = similarity_graph.get(oos_sku, [])
         # Handle both tuple and list formats (JSON serializes tuples as lists)
         candidates = [(c[0], c[1]) if isinstance(c, (list, tuple)) else (str(c), 0.5) for c in candidates]
 
-        if candidates:
-            # Consider both similarity and margin (approximated by price/margin heuristics)
-            # Products with higher margin are typically more profitable substitutes
-            margin_estimates = {
-                "MILK_1L": 0.25, "MILK_2L": 0.22, "MILK_500ML": 0.30,
-                "BREAD_WHITE": 0.35, "BREAD_WHEAT": 0.30,
-                "EGGS_12": 0.20, "YOGURT_GREEK": 0.40, "CHEESE_CHEDDAR": 0.28
-            }
+        if not candidates:
+            return {"action": "contact", "substitute_sku": "", "confidence": 0.3}
 
+        # Margin estimates from product catalog
+        margin_estimates = {
+            "MILK_1L": 0.25, "MILK_2L": 0.22, "MILK_500ML": 0.30,
+            "BREAD_WHITE": 0.35, "BREAD_WHEAT": 0.30,
+            "EGGS_12": 0.20, "YOGURT_GREEK": 0.40, "CHEESE_CHEDDAR": 0.28
+        }
+
+        # Score candidates: similarity * margin * (inventory > 0 ? 1 : 0)
+        # Prefer in-stock items, but if best is OOS, pick next best in-stock
+        in_stock_candidates = [(sku, sim) for sku, sim in candidates if store_inventory.get(sku, 0) > 0]
+
+        if in_stock_candidates:
             best_candidate = None
             best_score = -1
-            for sku, sim in candidates:
-                if store_inventory.get(sku, 0) > 0:
-                    margin = margin_estimates.get(sku, 0.25)  # default margin
-                    score = sim * margin
-                    if score > best_score:
-                        best_score = score
-                        best_candidate = (sku, sim)
+            for sku, sim in in_stock_candidates:
+                margin = margin_estimates.get(sku, 0.25)
+                score = sim * margin
+                # Boost score for price-sensitive customers if price is lower
+                if customer_prefs.get("price_sensitive", False):
+                    # Heuristic: smaller pack = lower absolute price
+                    if "500ML" in sku or "1L" in sku or sku == "EGGS_12":
+                        score *= 1.1
+                if score > best_score:
+                    best_score = score
+                    best_candidate = (sku, sim)
 
             if best_candidate:
                 sku, sim = best_candidate
-                return {"action": "suggest", "substitute_sku": sku, "confidence": min(0.9, 0.5 + 0.5 * sim)}
+                confidence = min(0.9, 0.5 + 0.5 * sim)
+                return {"action": "suggest", "substitute_sku": sku, "confidence": confidence}
 
-        # Fallback: just pick highest similarity in stock
-        if candidates:
-            for sku, sim in sorted(candidates, key=lambda x: -x[1]):
-                if store_inventory.get(sku, 0) > 0:
-                    return {"action": "suggest", "substitute_sku": sku, "confidence": min(0.9, 0.5 + 0.5 * sim)}
-
+        # Fallback: all candidates OOS, contact customer
         return {"action": "contact", "substitute_sku": "", "confidence": 0.3}
 
 
