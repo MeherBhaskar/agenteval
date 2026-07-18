@@ -1,15 +1,13 @@
 FROM agenteval/base:latest
 
 RUN pip install --no-cache-dir \
+    flask \
     pandas \
-    numpy \
-    matplotlib \
-    seaborn \
-    plotly
+    numpy
 
-COPY tasks/data_analysis /app/tasks/data_analysis
-RUN pip install -e /app/tasks/data_analysis
+COPY tasks/data_analysis/server.py /app/tasks/data_analysis/
+COPY tasks/data_analysis/task.json /app/tasks/data_analysis/
 
 WORKDIR /app/tasks/data_analysis
 
-CMD ["python", "run_server.py"]
+CMD ["python", "server.py"]

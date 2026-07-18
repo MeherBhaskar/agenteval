@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "description": "Sealed test sets for AgentEval benchmark. SHA256 hashes prevent data contamination.",
+  "description": "Sealed test sets for AgentEval benchmark (16 tasks). SHA256 hashes prevent data contamination.",
   "generated": "2026-07-18",
   "tasks": {
     "fact_qa_01_multi_hop": {
@@ -39,6 +39,94 @@
       "test_sha256": "4dbc40d73a15585671c8c0f1ae3bccd97807a49e1da92356be3f6b8df29b57e3",
       "test_samples": 200,
       "dev_sha256": "4c307c84cb80f417ff42ad1835923e986bed0810afd5b403ac2b58700c656ae5",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "api_integration_01": {
+      "test_sha256": "69220db730be70e61aa84c73c8bcb645f50416bdb7cccac1146f6a5f3d21d881",
+      "test_samples": 200,
+      "dev_sha256": "dce00ed61d5bf14d86df0089f6f4f7abc77ea7636b0b9b81a6a47a5341df3ddb",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "code_review_01": {
+      "test_sha256": "1db4d21006f5c2d25e7b05f1cc35a183640f05be3c774ebb0a49f1ec5393b1bc",
+      "test_samples": 200,
+      "dev_sha256": "abcd5b407ea11e1dd771ba21e36de8704c078f759bbe186110d64ad632d6cc7c",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "data_analysis_01_pandas": {
+      "test_sha256": "4f3db8d832744a7b2d57da31f78a3953eadb6dc9ee6ec68c52d10d9a10229f29",
+      "test_samples": 200,
+      "dev_sha256": "13ef5595392487491db2ac35d5cccb63fc96e9a543936e6dec7585c5430ece05",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "debugging_01": {
+      "test_sha256": "ca5e3ff03abcba7f9954c2a8ce99aca4c91c9aa91703d40974bc1bf7ba12c870",
+      "test_samples": 200,
+      "dev_sha256": "b796b3e9975af7ae2bd1babfe86bd3769deef8ec91286383b40f5682cdf6c578",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "entity_extraction_01": {
+      "test_sha256": "d2706f46fc32b2bef26ccb5d6e6068d6655568174e2cb84e739464cb5511e254",
+      "test_samples": 200,
+      "dev_sha256": "b7fe98f2fb846232d7e9088836d4eac3e93362201a864517a40a37f0c25c1328",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "question_answering_01": {
+      "test_sha256": "d831fa928ce5ffea6d60dd2ff6852426712b7d0ed11f17653c8cda1727d66b03",
+      "test_samples": 200,
+      "dev_sha256": "46a15c10eb6a8b1383cea7d547b556beb38dc04e8f1ebb3ee5a90c2e446d5032",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "sentiment_analysis_01": {
+      "test_sha256": "b8b3b807af405a9dc1e6fb30057c2bc3de3b79531d215a89225406b884ea2457",
+      "test_samples": 200,
+      "dev_sha256": "284ba1b71a1f857bf9561c4be2e0e98e868c232d33426c8bee74cc566d3dbd65",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "sql_generation_01": {
+      "test_sha256": "e21d7dcb9048569fd514e94e010b14b15c5e4fed16aa409950f41291163c9943",
+      "test_samples": 200,
+      "dev_sha256": "8c7567407d8ec8ea95bec65d21cf39e605884dae479337e83b40674de8897c55",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "summarization_01": {
+      "test_sha256": "501b6c25d8158a7f1f0adad6d861032cd4638abc19b3a5631703a54d2d2cd9f1",
+      "test_samples": 200,
+      "dev_sha256": "6f5a1555f000cc0014f202c0d59add87888ffd64277dd239abeee08288215e69",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "text_generation_01": {
+      "test_sha256": "efcf5cdfb5af4e33697d62213f6c07e15754f8205415281c98fb2becff1f7229",
+      "test_samples": 200,
+      "dev_sha256": "aac3f1f10754470e6e99f64c853e98d09a460622111f5642f0fe128d2490d931",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "translation_01": {
+      "test_sha256": "34d0e7d641ef9915b2598b7400135d98516fccffd9aae696991f27360f4dd6ab",
+      "test_samples": 200,
+      "dev_sha256": "4b476cbc0403e1974127337b22e100ecc1131d4f79741aaa02da8fe6782ef261",
       "dev_samples": 100,
       "generator_seed": 42,
       "dev_seed": 123

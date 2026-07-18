@@ -16,13 +16,24 @@ import docker
 import requests
 
 
-# Core task IDs (the 5 main ones)
+# Core task IDs (16 main ones: 5 original + 11 new)
 CORE_TASKS = [
     "fact_qa_01_multi_hop",
     "retail_01_substitution",
     "code_gen_01_api_usage",
     "web_shopping_01_product_finding",
-    "travel_planning_01_multi_constraint"
+    "travel_planning_01_multi_constraint",
+    "api_integration_01",
+    "code_review_01",
+    "data_analysis_01_pandas",
+    "debugging_01",
+    "entity_extraction_01",
+    "question_answering_01",
+    "sentiment_analysis_01",
+    "sql_generation_01",
+    "summarization_01",
+    "text_generation_01",
+    "translation_01"
 ]
 
 # Task to Docker image mapping
@@ -31,7 +42,18 @@ TASK_IMAGES = {
     "retail_01_substitution": "agenteval/retail-sim:v1.0",
     "code_gen_01_api_usage": "agenteval/code-gen:v1.0",
     "web_shopping_01_product_finding": "agenteval/web-shopping:v1.0",
-    "travel_planning_01_multi_constraint": "agenteval/travel-planning:v1.0"
+    "travel_planning_01_multi_constraint": "agenteval/travel-planning:v1.0",
+    "api_integration_01": "agenteval/api_integration:v1.0",
+    "code_review_01": "agenteval/code_review:v1.0",
+    "data_analysis_01_pandas": "agenteval/data_analysis:v1.0",
+    "debugging_01": "agenteval/debugging:v1.0",
+    "entity_extraction_01": "agenteval/entity_extraction:v1.0",
+    "question_answering_01": "agenteval/question_answering:v1.0",
+    "sentiment_analysis_01": "agenteval/sentiment_analysis:v1.0",
+    "sql_generation_01": "agenteval/sql_generation:v1.0",
+    "summarization_01": "agenteval/summarization:v1.0",
+    "text_generation_01": "agenteval/text_generation:v1.0",
+    "translation_01": "agenteval/translation:v1.0"
 }
 
 SEEDS = [42, 123, 456]
@@ -489,6 +511,17 @@ TASK_AGENT_MAP = {
     "code_gen_01_api_usage": "code_gen",
     "web_shopping_01_product_finding": "web_shopping",
     "travel_planning_01_multi_constraint": "travel_planning",
+    "api_integration_01": "react",
+    "code_review_01": "react",
+    "data_analysis_01_pandas": "react",
+    "debugging_01": "react",
+    "entity_extraction_01": "react",
+    "question_answering_01": "react",
+    "sentiment_analysis_01": "react",
+    "sql_generation_01": "react",
+    "summarization_01": "react",
+    "text_generation_01": "react",
+    "translation_01": "react",
 }
 
 # All available agents
@@ -502,161 +535,6 @@ AGENTS = {
     "web_shopping": lambda: WebShoppingAgent(),
     "travel_planning": lambda: TravelPlanningAgent(),
     "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
-}
-
-# All available agents
-AGENTS = {
-    "react": lambda: ReActAgent(),
-    "plan_and_solve": lambda: PlanAndSolveAgent(),
-    "reflexion": lambda: ReflexionAgent(),
-    "cot": lambda: CoTAgent(),
-    "random": lambda: RandomAgent(),
-    "retail": lambda: RetailAgent(),
-    "web_shopping": lambda: WebShoppingAgent(),
-    "travel_planning": lambda: TravelPlanningAgent(),
-    "code_gen": lambda: CodeGenAgent(),
-}
-
-TASK_AGENT_MAP = {
-    "fact_qa_01_multi_hop": "react",
-    "retail_01_substitution": "retail",
-    "code_gen_01_api_usage": "code_gen",
-    "web_shopping_01_product_finding": "web_shopping",
-    "travel_planning_01_multi_constraint": "travel_planning",
 }
 
 
