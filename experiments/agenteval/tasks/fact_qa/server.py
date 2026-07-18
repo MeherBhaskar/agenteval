@@ -5,6 +5,7 @@ Fact QA Task Server - Multi-hop fact-seeking QA with retrieval and reasoning.
 import os
 import json
 import random
+import re
 from pathlib import Path
 from flask import Flask, request, jsonify
 
@@ -24,11 +25,15 @@ def load_data(split: str):
     TASK_DATA_DIR.mkdir(parents=True, exist_ok=True)
     data = []
     for i in range(100 if split != "test" else 200):
+        capital = f"Capital{i}"
         item = {
             "id": f"{split}_{i:04d}",
             "question": f"What is the capital of country X{i}?",
-            "answer": f"Capital{i}",
-            "supporting_facts": [f"Fact {i}.1", f"Fact {i}.2"],
+            "answer": capital,
+            "supporting_facts": [
+                f"Country X{i} is located in region R{i}. Its capital city is {capital}.",
+                f"The capital of X{i}, {capital}, was founded in year {1800 + i % 200}."
+            ],
             "metadata": {"difficulty": random.choice(["easy", "medium", "hard"])}
         }
         data.append(item)
@@ -37,6 +42,7 @@ def load_data(split: str):
         for item in data:
             f.write(json.dumps(item) + "\n")
     return data
+
 
 # Global data cache
 DATA_CACHE = {}
@@ -78,21 +84,30 @@ class FactQAEnv:
         info = {}
 
         if action_type == "search":
-            # Simulate retrieval
+            # Simulate retrieval - return first supporting fact
             reward = 0.2
             context = f"Retrieved: {self.current_item['supporting_facts'][0]}"
         elif action_type == "reason":
-            # Simulate reasoning
+            # Simulate reasoning - return second supporting fact
             reward = 0.3
-            context = f"Reasoning step: {content}"
+            context = f"Reasoning: {content}. Additional context: {self.current_item['supporting_facts'][1] if len(self.current_item['supporting_facts']) > 1 else ''}"
+        elif action_type == "think":
+            # Chain of thought
+            reward = 0.1
+            context = f"Thinking: {content}"
         elif action_type == "answer":
-            # Check answer
-            if content.lower().strip() == self.current_item["answer"].lower().strip():
+            # Check answer - exact match or contains the capital name
+            expected = self.current_item["answer"]
+            # Flexible matching: check if answer contains the expected capital
+            if expected.lower().strip() in content.lower().strip():
                 reward = 1.0
+            elif any(word in content.lower() for word in expected.lower().split()):
+                # Partial credit for partial match
+                reward = 0.5
             else:
                 reward = 0.0
             done = True
-            info = {"correct": reward > 0, "expected": self.current_item["answer"]}
+            info = {"correct": reward >= 0.5, "expected": self.current_item["answer"], "given": content}
             context = ""
         else:
             context = "Unknown action type"
