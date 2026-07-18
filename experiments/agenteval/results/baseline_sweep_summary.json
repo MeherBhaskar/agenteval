@@ -1,0 +1,292 @@
+{
+  "travel_planning_01_multi_constraint/ReAct/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/ReAct/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/PlanAndSolve/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/PlanAndSolve/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/Reflexion/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/Reflexion/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/CoT/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/CoT/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/Random/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/Random/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/TravelPlanningAgent/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 1.6000000000000003,
+    "n": 3
+  },
+  "travel_planning_01_multi_constraint/TravelPlanningAgent/test": {
+    "success_rate": 0.6666666666666666,
+    "avg_reward": 1.366666666666667,
+    "n": 3
+  },
+  "code_gen_01_api_usage/ReAct/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/ReAct/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/PlanAndSolve/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/PlanAndSolve/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/Reflexion/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/Reflexion/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/CoT/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/CoT/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/Random/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/Random/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.8000000000000002,
+    "n": 3
+  },
+  "code_gen_01_api_usage/CodeGenAgent/dev": {
+    "success_rate": 0.6666666666666666,
+    "avg_reward": 0.9333333333333332,
+    "n": 3
+  },
+  "code_gen_01_api_usage/CodeGenAgent/test": {
+    "success_rate": 0.6666666666666666,
+    "avg_reward": 0.9333333333333332,
+    "n": 3
+  },
+  "fact_qa_01_multi_hop/ReAct/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 1.7999999999999998,
+    "n": 9
+  },
+  "fact_qa_01_multi_hop/ReAct/test": {
+    "success_rate": 1.0,
+    "avg_reward": 1.7999999999999998,
+    "n": 9
+  },
+  "fact_qa_01_multi_hop/PlanAndSolve/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 1.6000000000000003,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/PlanAndSolve/test": {
+    "success_rate": 1.0,
+    "avg_reward": 1.6000000000000003,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/Reflexion/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 1.0,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/Reflexion/test": {
+    "success_rate": 0.0,
+    "avg_reward": 1.0,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/CoT/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 1.5,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/CoT/test": {
+    "success_rate": 1.0,
+    "avg_reward": 1.5,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/Random/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.20000000000000004,
+    "n": 6
+  },
+  "fact_qa_01_multi_hop/Random/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.06666666666666667,
+    "n": 6
+  },
+  "web_shopping_01_product_finding/ReAct/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.10000000000000002,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/ReAct/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.10000000000000002,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/PlanAndSolve/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.30000000000000004,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/PlanAndSolve/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.30000000000000004,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/Reflexion/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.9999999999999999,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/Reflexion/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.9999999999999999,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/CoT/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.20000000000000004,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/CoT/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.20000000000000004,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/Random/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.23333333333333336,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/Random/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.30000000000000004,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/WebShoppingAgent/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 1.3,
+    "n": 3
+  },
+  "web_shopping_01_product_finding/WebShoppingAgent/test": {
+    "success_rate": 1.0,
+    "avg_reward": 1.3,
+    "n": 3
+  },
+  "retail_01_substitution/ReAct/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 6
+  },
+  "retail_01_substitution/ReAct/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 6
+  },
+  "retail_01_substitution/PlanAndSolve/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 6
+  },
+  "retail_01_substitution/PlanAndSolve/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 6
+  },
+  "retail_01_substitution/Reflexion/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 6
+  },
+  "retail_01_substitution/Reflexion/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 5
+  },
+  "retail_01_substitution/CoT/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "retail_01_substitution/CoT/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "retail_01_substitution/Random/dev": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "retail_01_substitution/Random/test": {
+    "success_rate": 0.0,
+    "avg_reward": 0.0,
+    "n": 3
+  },
+  "retail_01_substitution/RetailAgent/dev": {
+    "success_rate": 1.0,
+    "avg_reward": 0.6606163889636396,
+    "n": 3
+  },
+  "retail_01_substitution/RetailAgent/test": {
+    "success_rate": 0.6666666666666666,
+    "avg_reward": 0.6696829768579965,
+    "n": 3
+  }
+}

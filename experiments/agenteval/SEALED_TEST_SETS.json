@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "description": "Sealed test sets for AgentEval benchmark. SHA256 hashes prevent data contamination.",
+  "generated": "2026-07-18",
+  "tasks": {
+    "fact_qa_01_multi_hop": {
+      "test_sha256": "51f99cbb0543f25e15019d8cc1ad9581d830a2224d83197a53b011c34e1bdb71",
+      "test_samples": 200,
+      "dev_sha256": "2dce10e99b92df3d7ea1123f005f8be28a170d08b886cdc23bd0dffcf95c00d0",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "retail_01_substitution": {
+      "test_sha256": "ea55c8399db1a64105890b43351b141880d6011badaf5255e688264aba924e83",
+      "test_samples": 500,
+      "dev_sha256": "f5002b3869a73090358dbd2b6fd472a3030482bbe661bca60b4d3b656a76c691",
+      "dev_samples": 500,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "web_shopping_01_product_finding": {
+      "test_sha256": "ddc587a20efa72d3e35b7a12c1d3dfbc1fd9016fab74ef5707791e921f180c9d",
+      "test_samples": 200,
+      "dev_sha256": "b4e1d017d6c6714c50eb9b5e29786397e48d538f340d0ba7827aa3921e9fdb5a",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "travel_planning_01_multi_constraint": {
+      "test_sha256": "923619b3dcd97fa56c6783eaca1c90309e31d6df26d5933efaa6df5cbda91e12",
+      "test_samples": 200,
+      "dev_sha256": "5e69995b02cc0e0bea1c00dd91a65cf4777263adc6d1c925a095e872b6a80702",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    },
+    "code_gen_01_api_usage": {
+      "test_sha256": "4dbc40d73a15585671c8c0f1ae3bccd97807a49e1da92356be3f6b8df29b57e3",
+      "test_samples": 200,
+      "dev_sha256": "4c307c84cb80f417ff42ad1835923e986bed0810afd5b403ac2b58700c656ae5",
+      "dev_samples": 100,
+      "generator_seed": 42,
+      "dev_seed": 123
+    }
+  },
+  "verification": "Run: sha256sum tasks/*/data/test.jsonl and compare to manifest"
+}
