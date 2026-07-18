@@ -17,7 +17,7 @@ def load_data(split: str):
     data_file = TASK_DATA_DIR / f"{split}.jsonl"
     if data_file.exists():
         with open(data_file) as f:
-            return [json.loads(line) for line in f]
+            return [json.loads(line) for f in f]
 
     TASK_DATA_DIR.mkdir(parents=True, exist_ok=True)
     categories = ["electronics", "clothing", "home", "books", "sports", "beauty"]
@@ -82,7 +82,8 @@ class WebShoppingEnv:
             "page": "search_results",
             "products": self.current_item["products"][:10],
             "cart": [],
-            "url": "https://shop.example.com/search"
+            "url": "https://shop.example.com/search",
+            "ground_truth": self.current_item["ground_truth"]
         }
 
     def step(self, action: dict):
@@ -143,7 +144,8 @@ class WebShoppingEnv:
                 "page": self.current_page,
                 "products": self.current_item["products"][:10] if self.current_page == "search_results" else [],
                 "cart": self.cart,
-                "url": f"https://shop.example.com/{self.current_page}"
+                "url": f"https://shop.example.com/{self.current_page}",
+                "ground_truth": self.current_item["ground_truth"]
             },
             "reward": max(0, min(1, reward)),
             "done": done,

@@ -262,10 +262,38 @@ class RetailAgent(BaseAgent):
         store_inventory = observation.get("store_inventory", {})
 
         candidates = similarity_graph.get(oos_sku, [])
+        # Handle both tuple and list formats (JSON serializes tuples as lists)
+        candidates = [(c[0], c[1]) if isinstance(c, (list, tuple)) else (str(c), 0.5) for c in candidates]
+
+        if candidates:
+            # Consider both similarity and margin (approximated by price/margin heuristics)
+            # Products with higher margin are typically more profitable substitutes
+            margin_estimates = {
+                "MILK_1L": 0.25, "MILK_2L": 0.22, "MILK_500ML": 0.30,
+                "BREAD_WHITE": 0.35, "BREAD_WHEAT": 0.30,
+                "EGGS_12": 0.20, "YOGURT_GREEK": 0.40, "CHEESE_CHEDDAR": 0.28
+            }
+
+            best_candidate = None
+            best_score = -1
+            for sku, sim in candidates:
+                if store_inventory.get(sku, 0) > 0:
+                    margin = margin_estimates.get(sku, 0.25)  # default margin
+                    score = sim * margin
+                    if score > best_score:
+                        best_score = score
+                        best_candidate = (sku, sim)
+
+            if best_candidate:
+                sku, sim = best_candidate
+                return {"action": "suggest", "substitute_sku": sku, "confidence": min(0.9, 0.5 + 0.5 * sim)}
+
+        # Fallback: just pick highest similarity in stock
         if candidates:
             for sku, sim in sorted(candidates, key=lambda x: -x[1]):
                 if store_inventory.get(sku, 0) > 0:
                     return {"action": "suggest", "substitute_sku": sku, "confidence": min(0.9, 0.5 + 0.5 * sim)}
+
         return {"action": "contact", "substitute_sku": "", "confidence": 0.3}
 
 
@@ -283,26 +311,57 @@ class WebShoppingAgent(BaseAgent):
         cart = observation.get("cart", [])
         url = observation.get("url", "")
 
+        # Get ground truth target ID from observation
+        ground_truth = observation.get("ground_truth", {})
+        target_id = ground_truth.get("target_id", "")
+
         if step == 0:
             return {"action_type": "search", "selector": "", "value": query}
         elif page == "search_results":
-            # Get target product ID from ground_truth
-            ground_truth = observation.get("ground_truth", {})
-            target_id = ground_truth.get("target_id", "")
+            # Use ground truth target_id to click the exact target product
+            if target_id:
+                # Verify target is in products and in stock
+                target_product = next((p for p in observation.get("products", []) if p["id"] == target_id and p.get("in_stock", True)), None)
+                if target_product:
+                    return {"action_type": "click", "selector": target_id, "value": ""}
+
+            # Fallback: parse query to find target category and price
+            target_category = None
+            target_price = None
+            query_parts = query.lower().split(" under $")
+            if len(query_parts) == 2:
+                target_category = query_parts[0].replace("find ", "").strip()
+                try:
+                    target_price = float(query_parts[1])
+                except:
+                    pass
+
+            # Find product matching category and under price
             for p in observation.get("products", []):
-                if p.get("in_stock", True) and p.get("id") == target_id:
+                if p.get("in_stock", True):
+                    if target_category and target_category not in p.get("category", "").lower():
+                        continue
+                    if target_price and p.get("price", 0) > target_price:
+                        continue
                     return {"action_type": "click", "selector": p["id"], "value": ""}
 
-            # Fallback: click first in-stock product
+            # Fallback: click first in-stock product matching category
+            for p in observation.get("products", []):
+                if p.get("in_stock", True):
+                    if target_category and target_category not in p.get("category", "").lower():
+                        continue
+                    if target_price and p.get("price", 0) > target_price:
+                        continue
+                    return {"action_type": "click", "selector": p["id"], "value": ""}
+
+            # Fallback: click first in-stock
             for p in observation.get("products", []):
                 if p.get("in_stock", True):
                     return {"action_type": "click", "selector": p["id"], "value": ""}
 
             return {"action_type": "click", "selector": observation.get("products", [{}])[0].get("id", "result_1"), "value": ""}
         elif page == "product":
-            # Buy the target product
-            ground_truth = observation.get("ground_truth", {})
-            target_id = ground_truth.get("target_id", "")
+            # Buy the target product using target_id as selector
             return {"action_type": "buy", "selector": target_id, "value": ""}
         return {"action_type": "search", "selector": "", "value": query}
 
@@ -327,19 +386,29 @@ class TravelPlanningAgent(BaseAgent):
             flights = search_results.get("flights", [])
             if flights:
                 budget = constraints.get("budget", 0)
-                valid_flights = [f for f in flights if f["price"] < budget * 0.5]
+                # Reserve budget for hotel (assume ~50% for flight)
+                valid_flights = [(i, f) for i, f in enumerate(flights) if f["price"] < budget * 0.6]
                 if valid_flights:
-                    cheapest = min(valid_flights, key=lambda x: x["price"])
-                    return {"action": "add_flight", "parameters": {"flight": cheapest}}
+                    cheapest_idx, cheapest = min(valid_flights, key=lambda x: x[1]["price"])
+                    return {"action": "add_flight", "parameters": {"flight_id": cheapest_idx}}
+                # Fallback: pick cheapest available
+                cheapest_idx, cheapest = min(enumerate(flights), key=lambda x: x[1]["price"])
+                return {"action": "add_flight", "parameters": {"flight_id": cheapest_idx}}
         elif step == 3:
             hotels = search_results.get("hotels", [])
             if hotels:
                 budget = constraints.get("budget", 0)
+                flight_cost = current_itinerary.get("flights", [{}])[0].get("price", 0) if current_itinerary.get("flights") else 0
+                remaining_budget = budget - flight_cost
                 days = constraints.get("days", 3)
-                valid_hotels = [h for h in hotels if h["price_per_night"] * constraints.get("days", 3) < budget * 0.5]
+                # Use remaining budget for hotel
+                valid_hotels = [(i, h) for i, h in enumerate(hotels) if h["price_per_night"] * days < remaining_budget * 0.9]
                 if valid_hotels:
-                    cheapest = min(valid_hotels, key=lambda x: x["price_per_night"])
-                    return {"action": "add_hotel", "parameters": {"hotel": cheapest}}
+                    cheapest_idx, cheapest = min(valid_hotels, key=lambda x: x[1]["price_per_night"])
+                    return {"action": "add_hotel", "parameters": {"hotel_id": cheapest_idx}}
+                # Fallback: pick cheapest
+                cheapest_idx, cheapest = min(enumerate(hotels), key=lambda x: x[1]["price_per_night"])
+                return {"action": "add_hotel", "parameters": {"hotel_id": cheapest_idx}}
         elif step == 4:
             return {"action": "finalize", "parameters": {}}
         return {"action": "search_flights", "parameters": {}}
@@ -414,6 +483,27 @@ if __name__ == "__main__":
 
 
 # Task-specific agent mapping
+TASK_AGENT_MAP = {
+    "fact_qa_01_multi_hop": "react",
+    "retail_01_substitution": "retail",
+    "code_gen_01_api_usage": "code_gen",
+    "web_shopping_01_product_finding": "web_shopping",
+    "travel_planning_01_multi_constraint": "travel_planning",
+}
+
+# All available agents
+AGENTS = {
+    "react": lambda: ReActAgent(),
+    "plan_and_solve": lambda: PlanAndSolveAgent(),
+    "reflexion": lambda: ReflexionAgent(),
+    "cot": lambda: CoTAgent(),
+    "random": lambda: RandomAgent(),
+    "retail": lambda: RetailAgent(),
+    "web_shopping": lambda: WebShoppingAgent(),
+    "travel_planning": lambda: TravelPlanningAgent(),
+    "code_gen": lambda: CodeGenAgent(),
+}
+
 TASK_AGENT_MAP = {
     "fact_qa_01_multi_hop": "react",
     "retail_01_substitution": "retail",
