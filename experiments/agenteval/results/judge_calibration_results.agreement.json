@@ -1,10 +1,10 @@
 {
-  "test_pass_rate": [],
-  "purchase_success": [],
   "f1": [],
   "margin_retention_pct": [],
   "retrieval_recall@10": [],
+  "test_pass_rate": [],
   "acceptance_rate": [],
-  "constraint_satisfaction": [],
-  "exact_match": []
+  "purchase_success": [],
+  "exact_match": [],
+  "constraint_satisfaction": []
 }
