@@ -66,6 +66,32 @@ We present AgentEval, a Docker-based benchmarking infrastructure for evaluating 
 - Seeds: 42, 123, 456
 - Full results in results/baseline_sweep_*.jsonl
 
+
+
+## Statistical Analysis
+
+### Bootstrap Confidence Intervals (Test Split, N=3 seeds)
+
+| Task | Agent | Success Rate | 95% CI | Avg Reward | 95% CI |
+|------|-------|-------------|--------|-----------|--------|
+| fact_qa | ReAct | 1.000 | [1.000, 1.000] | 1.800 | [1.800, 1.800] |
+| retail | RetailAgent | 0.667 | [0.000, 1.000] | 0.670 | [0.396, 0.874] |
+| code_gen | CodeGenAgent | 0.667 | [0.000, 1.000] | 0.933 | [0.800, 1.000] |
+| web_shopping | WebShoppingAgent | 1.000 | [1.000, 1.000] | 1.300 | [1.300, 1.300] |
+| travel_planning | TravelPlanningAgent | 0.667 | [0.000, 1.000] | 1.367 | [0.900, 1.600] |
+
+### Significance Testing (Specialized vs Best Baseline)
+
+| Task | Comparison | Diff | 95% CI | Significant? |
+|------|------------|------|--------|--------------|
+| fact_qa | ReAct vs ReAct | 0.000 | [0.000, 0.000] | No (same agent) |
+| retail | RetailAgent vs ReAct | 0.669 | [0.000, 1.000] | No (CI includes 0) |
+| code_gen | CodeGenAgent vs ReAct | 0.666 | [0.000, 1.000] | No (CI includes 0) |
+| web_shopping | WebShoppingAgent vs ReAct | 1.000 | [1.000, 1.000] | **Yes** |
+| travel_planning | TravelPlanningAgent vs ReAct | 0.666 | [0.000, 1.000] | No (CI includes 0) |
+
+**Limitation**: With only N=3 seeds per condition, bootstrap CIs are extremely wide. The web_shopping result is the only statistically significant comparison at p<0.05. Future work should increase to N≥10 seeds per task for rigorous statistical testing.
+
 ## 6. Limitations & Future Work
 - Only 5 core tasks (expand to 20+ for broader coverage)
 - CodeGenAgent only 66.7% success

@@ -1,0 +1,20 @@
+{"sample_id": "cal_000", "scores": {"accuracy": 0.84, "f1": 0.86}, "reasoning": "All steps mostly correct, high accuracy and F1."}
+{"sample_id": "cal_001", "scores": {"accuracy": 0.79, "f1": 0.84}, "reasoning": "All steps mostly correct, good accuracy and F1."}
+{"sample_id": "cal_002", "scores": {"bug_fixed": 0.09, "test_pass": 0.15}, "reasoning": "Both steps wrong, very low bug fix and test pass rates."}
+{"sample_id": "cal_003", "scores": {"success_rate": 0.97, "latency_ms": 0.98}, "reasoning": "All steps correct actions, excellent success rate and latency."}
+{"sample_id": "cal_004", "scores": {"bleu": 0.58, "comet": 0.53}, "reasoning": "All steps partial, moderate translation quality."}
+{"sample_id": "cal_005", "scores": {"test_pass_rate": 0.85, "api_correctness": 0.78}, "reasoning": "All steps mostly correct, good test pass and API correctness."}
+{"sample_id": "cal_006", "scores": {"output_match": 0.97, "code_quality_score": 0.94}, "reasoning": "All steps correct actions, near-perfect output match and code quality."}
+{"sample_id": "cal_007", "scores": {"execution_accuracy": 0.59, "syntax_correctness": 0.56}, "reasoning": "All steps partial, moderate SQL execution accuracy and syntax."}
+{"sample_id": "cal_008", "scores": {"exact_match": 0.93, "f1": 1.0, "retrieval_recall@10": 0.99}, "reasoning": "All steps correct actions, excellent exact match, F1, and retrieval recall."}
+{"sample_id": "cal_009", "scores": {"bug_detection": 0.51, "suggestion_quality": 0.51}, "reasoning": "All steps partial, moderate bug detection and suggestion quality."}
+{"sample_id": "cal_010", "scores": {"success_rate": 0.67, "latency_ms": 0.65}, "reasoning": "Trajectory consists of partial actions; ground truth shows moderate success rate and latency."}
+{"sample_id": "cal_011", "scores": {"purchase_success": 0.97, "price_optimality": 1.0, "query_relevance": 1.0}, "reasoning": "All actions are correct; ground truth indicates near-perfect purchase success, price optimality, and query relevance."}
+{"sample_id": "cal_012", "scores": {"constraint_satisfaction": 0.52, "total_cost_vs_budget": 0.6, "preference_alignment": 0.6}, "reasoning": "Partial actions throughout; ground truth reflects moderate constraint satisfaction, cost alignment, and preference alignment."}
+{"sample_id": "cal_013", "scores": {"exact_match": 0.59, "f1": 0.55, "retrieval_recall@10": 0.58}, "reasoning": "Partial actions; ground truth shows moderate exact match, F1, and retrieval recall."}
+{"sample_id": "cal_014", "scores": {"exact_match": 0.51, "f1": 0.54}, "reasoning": "Partial actions; ground truth indicates low exact match and F1 scores."}
+{"sample_id": "cal_015", "scores": {"test_pass_rate": 0.71, "api_correctness": 0.67}, "reasoning": "Mostly correct actions across four steps; ground truth shows good test pass rate and API correctness."}
+{"sample_id": "cal_016", "scores": {"constraint_satisfaction": 0.72, "total_cost_vs_budget": 0.72, "preference_alignment": 0.7}, "reasoning": "Mostly correct actions; ground truth reflects strong constraint satisfaction, cost alignment, and preference alignment."}
+{"sample_id": "cal_017", "scores": {"precision": 0.34, "recall": 0.32, "f1": 0.31}, "reasoning": "Wrong actions in both steps; ground truth shows low precision, recall, and F1."}
+{"sample_id": "cal_018", "scores": {"exact_match": 0.58, "f1": 0.55}, "reasoning": "Partial actions; ground truth indicates moderate exact match and F1."}
+{"sample_id": "cal_019", "scores": {"bug_fixed": 0.69, "test_pass": 0.7}, "reasoning": "Mostly correct actions across four steps; ground truth shows good bug fix rate and test pass rate."}
