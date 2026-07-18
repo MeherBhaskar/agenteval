@@ -1,7 +1,7 @@
 # AgentEval: A Reproducible Benchmark for Evaluating Autonomous Agents
 
 ## Abstract
-We present AgentEval, a Docker-based benchmarking infrastructure for evaluating autonomous AI agents across diverse real-world tasks. AgentEval provides 5 core task environments (multi-hop QA, retail substitution, code generation, web shopping, travel planning) with isolated Docker containers, sealed test sets with SHA256 hashes, and a standardized evaluation protocol. We evaluate 5 baseline agents (ReAct, PlanAndSolve, Reflexion, CoT, Random) plus task-specialized agents, finding that specialized agents achieve 100% success on 4/5 tasks while baselines struggle on domain-specific tasks. We release the full infrastructure, test sets, and evaluation results to enable reproducible agent benchmarking.
+We present AgentEval, a Docker-based benchmarking infrastructure for evaluating autonomous AI agents across diverse real-world tasks. AgentEval provides 5 core task environments (multi-hop QA, retail substitution, code generation, web shopping, travel planning) with isolated Docker containers, sealed test sets with SHA256 hashes, and a standardized evaluation protocol. We evaluate 5 baseline agents (ReAct, PlanAndSolve, Reflexion, CoT, Random) plus task-specialized agents, finding that specialized agents achieve 100% success on 4/16 tasks while baselines struggle on domain-specific tasks. We release the full infrastructure, test sets, and evaluation results to enable reproducible agent benchmarking.
 
 ## 1. Introduction
 - Motivation: Need for reproducible agent evaluation
@@ -19,13 +19,28 @@ We present AgentEval, a Docker-based benchmarking infrastructure for evaluating 
 
 ## 3. AgentEval Design
 ### 3.1 Task Environments
-| Task | Type | Description | Test Samples |
-|------|------|-------------|--------------|
-| fact_qa_01_multi_hop | QA | Multi-hop fact retrieval | 200 |
-| retail_01_substitution | Decision | Product substitution for OOS items | 500 |
-| code_gen_01_api_usage | Code | API usage code generation | 200 |
-| web_shopping_01_product_finding | Web | Find & purchase product under budget | 200 |
-| travel_planning_01_multi_constraint | Planning | Multi-constraint trip planning | 200 |
+AgentEval v1.0 includes 16 diverse task environments spanning 6 categories:
+
+| Task ID | Category | Description | Test Samples | Specialized Agent |
+|---------|----------|-------------|--------------|-------------------|
+| fact_qa_01_multi_hop | QA | Multi-hop fact retrieval | 200 | ReAct |
+| retail_01_substitution | Decision | Product substitution for OOS items | 500 | RetailAgent |
+| code_gen_01_api_usage | Code | API usage code generation | 200 | CodeGenAgent |
+| web_shopping_01_product_finding | Web | Find & purchase product under budget | 200 | WebShoppingAgent |
+| travel_planning_01_multi_constraint | Planning | Multi-constraint trip planning | 200 | TravelPlanningAgent |
+| api_integration_01 | API | REST API integration | 200 | — |
+| code_review_01 | Code | Code review & bug finding | 200 | — |
+| data_analysis_01_pandas | Data | Pandas data analysis | 200 | — |
+| debugging_01 | Debug | Debug code snippets | 200 | — |
+| entity_extraction_01 | NLP | Named entity extraction | 200 | — |
+| question_answering_01 | QA | General question answering | 200 | — |
+| sentiment_analysis_01 | NLP | Sentiment classification | 200 | — |
+| sql_generation_01 | Code | SQL query generation | 200 | — |
+| summarization_01 | NLP | Text summarization | 200 | — |
+| text_generation_01 | NLP | Creative text generation | 200 | — |
+| translation_01 | NLP | Machine translation | 200 | — |
+
+**Total: 16 tasks, 3,500 test samples**
 
 ### 3.2 Infrastructure
 - Docker isolation per task
@@ -93,7 +108,7 @@ We present AgentEval, a Docker-based benchmarking infrastructure for evaluating 
 **Limitation**: With only N=3 seeds per condition, bootstrap CIs are extremely wide. The web_shopping result is the only statistically significant comparison at p<0.05. Future work should increase to N≥10 seeds per task for rigorous statistical testing.
 
 ## 6. Limitations & Future Work
-- Only 5 core tasks (expand to 20+ for broader coverage)
+- Only 16 benchmark tasks (expand to 20+ for broader coverage)
 - CodeGenAgent only 66.7% success
 - No human baseline comparison yet
 - Judge agreement analysis pending
